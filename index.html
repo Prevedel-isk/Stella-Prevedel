@@ -92,6 +92,30 @@ href="microphone.png"
     <main>
         <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg
             alt="Justin Bieber">
+            <div class="button-container">
+                <button onclick="togglePictures()">On/Off</button>
+            </div>
+    
+            <div id="picture-container">
+                <img id="picture1" src="https://t3.ftcdn.net/jpg/05/46/92/20/360_F_546922056_qLvb0l3rF2od0PdCtw3nsCi2KXjO8bD3.jpg" alt="Picture 1">
+                <img id="picture2" src="https://t4.ftcdn.net/jpg/03/44/85/27/360_F_344852709_IJsGgAIVwnOaNKrZkujiKl46inLReTkn.jpg" alt="Picture 2" style="display: none;">
+            </div>
+    
+            <script>
+                function togglePictures() {
+                    var picture1 = document.getElementById("picture1");
+                    var picture2 = document.getElementById("picture2");
+    
+                    if (picture1.style.display === "none") {
+                        picture1.style.display = "block";
+                        picture2.style.display = "none";
+                    } else {
+                        picture1.style.display = "none";
+                        picture2.style.display = "block";
+                    }
+                }
+            </script>
+        </main>
   
 
     <br><br>

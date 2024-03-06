@@ -1,678 +1,404 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: "Lato", sans-serif;}
-
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 50px;
-  text-align: center;
-}
-
-
-
-#London {background-color:#808080;}
-#Paris {background-color:#000;}
-#Tokyo {background-color:#fff;}
-#Oslo {background-color: #808080;}
-</style>
-</head>
-<body>
-
-<p>Click on the buttons inside the tabbed menu:</p>
-<!-- Tab links -->
-<button class="tablink" onclick="openCity('London', this, '#fff')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openCity('Paris', this, '#fff')">Paris</button>
-<button class="tablink" onclick="openCity('Tokyo', this, '#fff')">Tokyo</button>
-<button class="tablink" onclick="openCity('Oslo', this, '#fff')">Oslo</button>
-
-<!-- Tab content -->
-<div id="London" class="tabcontent">
-
-
-
-
-    
-    <title>Stelbee - Justin Bieber</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            background-color: #D3D3D3;
-            margin: 0;
-            padding: 0;
+            font-family: "Lato", sans-serif;
         }
 
-        header {
-            font-family: 'Impact';
-            background-color: #808080;
-            padding: 30px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 80px;
-            color: #C8A2C8;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        nav {
-            background-color: #e6e6e6;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            font-family: 'Impact';
-            font-size: 40px;
-            max-width: 100%;
-            text-decoration: none;
-            color: #000;
-            padding: 10px;
-            margin: 0 10px;
-            border-radius: 50px;
-            background-color: #ECD6F3;
-        }
-
-        nav a:hover {
-            font-size: 40px;
-            max-width: 100%;
-            background-color: #ff80bf;
-        }
-
-        main {
-            padding: 40px;
-            text-align: center;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-       nav c {
-       font-family: 'Impact';
-            font-size: 30px;
-            background-color: #808080;
-            padding: 30px;
-            text-align: center;
-            color: #FFF;
-            text-align : center;
-        }
-
-       nav d {
-       font-family: 'Serif';
-       font-size: 60xp;
-       }
-
-       button {
-            font-size: 24px;
-            background-color: #808080;
-            color: #fff;
-            padding: 10px 20px;
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
             border: none;
-            border-radius: 5px;
+            outline: none;
             cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
         }
-        #picture-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Set container height to fill the viewport */
-}
 
-       
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+        }
+
+
+
+        #London {
+            background-color: #808080;
+        }
+
+        #Paris {
+            background-color: #000;
+        }
+
+        #Tokyo {
+            background-color: #fff;
+        }
+
+        #Oslo {
+            background-color: #808080;
+        }
     </style>
+    <script>
+        function togglePictures() {
+            var picture1 = document.getElementById("picture1");
+            var picture2 = document.getElementById("picture2");
+
+            if (picture1.style.display === "none") {
+                picture1.style.display = "block";
+                picture2.style.display = "none";
+            } else {
+                picture1.style.display = "none";
+                picture2.style.display = "block";
+            }
+        }
+
+        function openCity(cityName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(cityName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
 </head>
+
 <body>
-<link rel="icon" type="image/png" href="microphone.png">
-    <header>
-        <h1>Stelbee - Justin Bieber</h1>
-    </header>
 
-    <nav>
-        <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
-    </nav>
+    <p>Click on the buttons inside the tabbed menu:</p>
+    <!-- Tab links -->
+    <button class="tablink" onclick="openCity('London', this, '#fff')" id="defaultOpen">London</button>
+    <button class="tablink" onclick="openCity('Paris', this, '#fff')">Paris</button>
+    <button class="tablink" onclick="openCity('Tokyo', this, '#fff')">Tokyo</button>
+    <button class="tablink" onclick="openCity('Oslo', this, '#fff')">Oslo</button>
 
-    <main>
-        <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg
-            alt="Justin Bieber">
-            
-    
+    <!-- Tab content -->
+    <div id="London" class="tabcontent">
 
-<div class="button-container">
+        <link rel="icon" type="image/png" href="microphone.png">
+        <header>
+            <h1>Stelbee - Justin Bieber</h1>
+        </header>
+
+        <nav>
+            <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
+        </nav>
+
+        <main>
+            <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg alt="Justin Bieber">
+
+
+
+            <div class="button-container">
                 <button onclick="togglePictures()">On/Off</button>
             </div>
-    
+
             <div id="picture-container">
-                <img id="picture1" src="https://t3.ftcdn.net/jpg/05/46/92/20/360_F_546922056_qLvb0l3rF2od0PdCtw3nsCi2KXjO8bD3.jpg" alt="Picture 1">
-                <img id="picture2" src="https://t4.ftcdn.net/jpg/03/44/85/27/360_F_344852709_IJsGgAIVwnOaNKrZkujiKl46inLReTkn.jpg" alt="Picture 2" style="display: none;">
+                <img id="picture1"
+                    src="https://t3.ftcdn.net/jpg/05/46/92/20/360_F_546922056_qLvb0l3rF2od0PdCtw3nsCi2KXjO8bD3.jpg"
+                    alt="Picture 1">
+                <img id="picture2"
+                    src="https://t4.ftcdn.net/jpg/03/44/85/27/360_F_344852709_IJsGgAIVwnOaNKrZkujiKl46inLReTkn.jpg"
+                    alt="Picture 2" style="display: none;">
             </div>
-    
-            <script>
-                function togglePictures() {
-                    var picture1 = document.getElementById("picture1");
-                    var picture2 = document.getElementById("picture2");
-            
-                    if (picture1.style.display === "none") {
-                        picture1.style.display = "block";
-                        picture2.style.display = "none";
-                    } else {
-                        picture1.style.display = "none";
-                        picture2.style.display = "block";
-                    }
-                }
-            </script>
-        </main>
-  
-
-    <br><br>
-
-    <center>
-        <b>
-            In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion within him.
-
-            Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local talent shows. His charisma and innate musicality set him on a path to stardom.
-
-            Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of loved ones, propelled him forward. His journey became a testament to the transformative power of music. Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just into a global pop sensation but a symbol of resilience and positivity.
-
-            The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
-        </b>
-        <br><br>
-    </center>
-
-    <nav>
-        <c> 
-            Why you should be a fan too: 
-        </c>
-    </nav>
-    <br><br>
-     
-    <nav>
-        <d> 
-            Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to soulful R&B beats.
-
-            Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences, capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to keep it real, sharing his own struggles and challenges in the spotlight.
-
-            But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for positive change.
-
-            And let's talk fandom. Being a Belieber means joining a community of passionate
-
-  <bv><bv>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <title>Stelbee - Justin Bieber</title>
-    <style>
-        body {
-            background-color: #000;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            font-family: 'Impact';
-            background-color: #000;
-            padding: 30px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 80px;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        nav {
-            background-color: #e6e6e6;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            font-family: 'Impact';
-            font-size: 40px;
-            max-width: 100%;
-            text-decoration: none;
-            color: #fff;
-            padding: 10px;
-            margin: 0 10px;
-            border-radius: 50px;
-            background-color: #000;
-        }
-
-        nav a:hover {
-            font-size: 40px;
-            max-width: 100%;
-            background-color: #ff80bf;
-        }
-
-        main {
-            padding: 40px;
-            text-align: center;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-       nav c {
-       font-family: 'Impact';
-            font-size: 30px;
-            background-color: #000;
-            padding: 30px;
-            text-align: center;
-            color: #FFF;
-            text-align : center;
-        }
-
-       nav d {
-       font-family: 'Serif';
-       font-size: 60xp;
-       }
-
-       button {
-            font-size: 24px;
-            background-color: #808080;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-       
-       
-    </style>
-</head>
-<body>
-<link rel="icon" type="image/png" href="microphone.png">
-    <header>
-        <h1>Stelbee - Justin Bieber</h1>
-    </header>
-
-    <nav>
-        <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
-    </nav>
-
-    <main>
-        <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg
-            alt="Justin Bieber">
-            
-    
-
-        </main>
-  
-
-    <br><br>
-
-    <center>
-        <b>
-            In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion within him.
-
-            Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local talent shows. His charisma and innate musicality set him on a path to stardom.
-
-            Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of loved ones, propelled him forward. His journey became a testament to the transformative power of music. Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just into a global pop sensation but a symbol of resilience and positivity.
-
-            The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
-        </b>
-        <br><br>
-    </center>
-
-    <nav>
-        <c> 
-            Why you should be a fan too: 
-        </c>
-    </nav>
-    <br><br>
-     
-    <nav>
-        <d> 
-            Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to soulful R&B beats.
-
-            Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences, capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to keep it real, sharing his own struggles and challenges in the spotlight.
-
-            But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for positive change.
-
-            And let's talk fandom. Being a Belieber means joining a community of passionate
-
-  <bv><bv>
-  
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h1>Tokyo</h1>
-  <title>Stelbee - Justin Bieber</title>
-    <style>
-        body {
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            font-family: 'Impact';
-            background-color: #808080;
-            padding: 30px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 80px;
-            color: #C8A2C8;
-            text-align: center;
-            margin-bottom: 0;
-        }
-
-        nav {
-            background-color: #e6e6e6;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            font-family: 'Impact';
-            font-size: 40px;
-            max-width: 100%;
-            text-decoration: none;
-            color: #000;
-            padding: 10px;
-            margin: 0 10px;
-            border-radius: 50px;
-            background-color: #ECD6F3;
-        }
-
-        nav a:hover {
-            font-size: 40px;
-            max-width: 100%;
-            background-color: #ff80bf;
-        }
-
-        main {
-            padding: 40px;
-            text-align: center;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-       nav c {
-       font-family: 'Impact';
-            font-size: 30px;
-            background-color: #808080;
-            padding: 30px;
-            text-align: center;
-            color: #FFF;
-            text-align : center;
-        }
-
-       nav d {
-       font-family: 'Serif';
-       font-size: 60xp;
-       }
-
-       button {
-            font-size: 24px;
-            background-color: #808080;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-       
-       
-    </style>
-</head>
-<body>
-<link rel="icon" type="image/png" href="microphone.png">
-    <header>
-        <h1>Stelbee - Justin Bieber</h1>
-    </header>
-
-    <nav>
-        <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
-    </nav>
-
-    <main>
-        <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg
-            alt="Justin Bieber">
-            
-    
 
 
         </main>
-  
 
-    <br><br>
 
-    <center>
-        <b>
-            In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion within him.
-
-            Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local talent shows. His charisma and innate musicality set him on a path to stardom.
-
-            Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of loved ones, propelled him forward. His journey became a testament to the transformative power of music. Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just into a global pop sensation but a symbol of resilience and positivity.
-
-            The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
-        </b>
         <br><br>
-    </center>
 
-    <nav>
-        <c> 
-            Why you should be a fan too: 
-        </c>
-    </nav>
-    <br><br>
-     
-    <nav>
-        <d> 
-            Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to soulful R&B beats.
+        <center>
+            <b>
+                In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would
+                blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies
+                from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion
+                within him.
 
-            Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences, capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to keep it real, sharing his own struggles and challenges in the spotlight.
+                Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding
+                artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local
+                talent shows. His charisma and innate musicality set him on a path to stardom.
 
-            But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for positive change.
+                Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of
+                loved ones, propelled him forward. His journey became a testament to the transformative power of music.
+                Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just
+                into a global pop sensation but a symbol of resilience and positivity.
 
-            And let's talk fandom. Being a Belieber means joining a community of passionate
+                The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from
+                humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
+            </b>
+            <br><br>
+        </center>
 
-  <bv><bv>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+        <nav>
+            <c>
+                Why you should be a fan too:
+            </c>
+        </nav>
+        <br><br>
 
-<div id="Oslo" class="tabcontent">
-  <h1>Oslo</h1>
-  <title>Stelbee - Justin Bieber</title>
-    <style>
-        body {
-            background-color: #D3D3D3;
-            margin: 0;
-            padding: 0;
-        }
+        <nav>
+            <d>
+                Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine
+                having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to
+                soulful R&B beats.
 
-        header {
-            font-family: 'Impact';
-            background-color: #808080;
-            padding: 30px;
-            text-align: center;
-        }
+                Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences,
+                capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to
+                keep it real, sharing his own struggles and challenges in the spotlight.
 
-        h1 {
-            font-size: 80px;
-            color: #C8A2C8;
-            text-align: center;
-            margin-bottom: 0;
-        }
+                But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a
+                world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for
+                positive change.
 
-        nav {
-            background-color: #e6e6e6;
-            padding: 10px;
-            text-align: center;
-        }
+                And let's talk fandom. Being a Belieber means joining a community of passionate
 
-        nav a {
-            font-family: 'Impact';
-            font-size: 40px;
-            max-width: 100%;
-            text-decoration: none;
-            color: #000;
-            padding: 10px;
-            margin: 0 10px;
-            border-radius: 50px;
-            background-color: #ECD6F3;
-        }
+                <bv>
+                    <bv>
+    </div>
 
-        nav a:hover {
-            font-size: 40px;
-            max-width: 100%;
-            background-color: #ff80bf;
-        }
+    <div id="Paris" class="tabcontent">
+        <title>Stelbee - Justin Bieber</title>
 
-        main {
-            padding: 40px;
-            text-align: center;
-        }
+        <link rel="icon" type="image/png" href="microphone.png">
+        <header>
+            <h1>Stelbee - Justin Bieber</h1>
+        </header>
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+        <nav>
+            <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
+        </nav>
 
-       nav c {
-       font-family: 'Impact';
-            font-size: 30px;
-            background-color: #808080;
-            padding: 30px;
-            text-align: center;
-            color: #FFF;
-            text-align : center;
-        }
+        <main>
+            <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg alt="Justin Bieber">
 
-       nav d {
-       font-family: 'Serif';
-       font-size: 60xp;
-       }
-
-       button {
-            font-size: 24px;
-            background-color: #808080;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-      
-       
-    </style>
-</head>
-<body>
-<link rel="icon" type="image/png" href="microphone.png">
-    <header>
-        <h1>Stelbee - Justin Bieber</h1>
-    </header>
-
-    <nav>
-        <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
-    </nav>
-
-    <main>
-        <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg
-            alt="Justin Bieber">
-            
-    
 
 
         </main>
-  
 
-    <br><br>
 
-    <center>
-        <b>
-            In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion within him.
-
-            Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local talent shows. His charisma and innate musicality set him on a path to stardom.
-
-            Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of loved ones, propelled him forward. His journey became a testament to the transformative power of music. Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just into a global pop sensation but a symbol of resilience and positivity.
-
-            The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
-        </b>
         <br><br>
-    </center>
 
-    <nav>
-        <c> 
-            Why you should be a fan too: 
-        </c>
-    </nav>
-    <br><br>
-     
-    <nav>
-        <d> 
-            Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to soulful R&B beats.
+        <center>
+            <b>
+                In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would
+                blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies
+                from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion
+                within him.
 
-            Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences, capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to keep it real, sharing his own struggles and challenges in the spotlight.
+                Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding
+                artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local
+                talent shows. His charisma and innate musicality set him on a path to stardom.
 
-            But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for positive change.
+                Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of
+                loved ones, propelled him forward. His journey became a testament to the transformative power of music.
+                Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just
+                into a global pop sensation but a symbol of resilience and positivity.
 
-            And let's talk fandom. Being a Belieber means joining a community of passionate
+                The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from
+                humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
+            </b>
+            <br><br>
+        </center>
 
-  <bv><bv>
-  <p></p>
-</div>
+        <nav>
+            <c>
+                Why you should be a fan too:
+            </c>
+        </nav>
+        <br><br>
+
+        <nav>
+            <d>
+                Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine
+                having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to
+                soulful R&B beats.
+
+                Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences,
+                capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to
+                keep it real, sharing his own struggles and challenges in the spotlight.
+
+                But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a
+                world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for
+                positive change.
+
+                And let's talk fandom. Being a Belieber means joining a community of passionate
+
+                <bv>
+                    <bv>
+
+                        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h1>Tokyo</h1>
+        <title>Stelbee - Justin Bieber</title>
+
+        <link rel="icon" type="image/png" href="microphone.png">
+        <header>
+            <h1>Stelbee - Justin Bieber</h1>
+        </header>
+
+        <nav>
+            <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
+        </nav>
+
+        <main>
+            <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg alt="Justin Bieber">
 
 
-<script>
-function openCity(cityName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(cityName).style.display = "block";
-  elmnt.style.backgroundColor = color;
 
-}
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
+
+        </main>
+
+
+        <br><br>
+
+        <center>
+            <b>
+                In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would
+                blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies
+                from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion
+                within him.
+
+                Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding
+                artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local
+                talent shows. His charisma and innate musicality set him on a path to stardom.
+
+                Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of
+                loved ones, propelled him forward. His journey became a testament to the transformative power of music.
+                Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just
+                into a global pop sensation but a symbol of resilience and positivity.
+
+                The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from
+                humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
+            </b>
+            <br><br>
+        </center>
+
+        <nav>
+            <c>
+                Why you should be a fan too:
+            </c>
+        </nav>
+        <br><br>
+
+        <nav>
+            <d>
+                Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine
+                having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to
+                soulful R&B beats.
+
+                Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences,
+                capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to
+                keep it real, sharing his own struggles and challenges in the spotlight.
+
+                But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a
+                world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for
+                positive change.
+
+                And let's talk fandom. Being a Belieber means joining a community of passionate
+
+                <bv>
+                    <bv>
+                        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <div id="Oslo" class="tabcontent">
+        <h1>Oslo</h1>
+        <title>Stelbee - Justin Bieber</title>
+
+        <link rel="icon" type="image/png" href="microphone.png">
+        <header>
+            <h1>Stelbee - Justin Bieber</h1>
+        </header>
+
+        <nav>
+            <a href="https://youtu.be/kffacxfA7G4?si=1W3-JqXK1JvMB5r5" target="_blank">How it all started</a>
+        </nav>
+
+        <main>
+            <img src=https://i.pinimg.com/736x/d3/28/3d/d3283d4f43dc97d08bb12f5b201c984b.jpg alt="Justin Bieber">
+
+
+
+
+        </main>
+
+
+        <br><br>
+
+        <center>
+            <b>
+                In the heart of Stratford, a young Justin Bieber discovered his love for music, an ember that would
+                blaze into a global phenomenon. Born into a humble family, his early years were a symphony of melodies
+                from his parents. It was his mother's favorite tunes and his father's guitar that ignited a passion
+                within him.
+
+                Recognizing Justin's extraordinary talent, a local music teacher became his guide, nurturing the budding
+                artist. Soon, Justin's magnetic voice echoed through the community, captivating audiences at local
+                talent shows. His charisma and innate musicality set him on a path to stardom.
+
+                Despite facing setbacks and criticisms, Justin's unwavering determination, coupled with the support of
+                loved ones, propelled him forward. His journey became a testament to the transformative power of music.
+                Beyond the glitz of fame, Justin used his platform to inspire and champion causes. He evolved not just
+                into a global pop sensation but a symbol of resilience and positivity.
+
+                The story of Justin Bieber is more than a musical journey; it's a melody of hope, reminding us that from
+                humble beginnings, extraordinary dreams can emerge, creating a harmonious resonance that touch
+            </b>
+            <br><br>
+        </center>
+
+        <nav>
+            <c>
+                Why you should be a fan too:
+            </c>
+        </nav>
+        <br><br>
+
+        <nav>
+            <d>
+                Let me lay it out for you why being a Justin Bieber fan could be the coolest thing for you. Imagine
+                having a musical companion who grows with you—Justin's got a song for every mood, from pop anthems to
+                soulful R&B beats.
+
+                Ever felt like a song just gets you? Justin's lyrics are like a diary of relatable experiences,
+                capturing the excitement of first love and the ups and downs of growing up. Plus, he's not afraid to
+                keep it real, sharing his own struggles and challenges in the spotlight.
+
+                But it's not just about the music; it's a vibe. Joining the Belieber community is like stepping into a
+                world of positive energy. Justin spreads good vibes, promotes kindness, and uses his platform for
+                positive change.
+
+                And let's talk fandom. Being a Belieber means joining a community of passionate
+
+                <bv>
+                    <bv>
+                        <p></p>
+    </div>
 
 
 </body>
-</html> 
+
+</html>
